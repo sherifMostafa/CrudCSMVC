@@ -1,0 +1,49 @@
+﻿@model Lab4.Models.books
+@{
+    Layout = "~/Views/Shared/_layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>edite</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <h1 class="text-center">Edite  Book Info</h1>
+    <div class="container">
+        <form method="post" enctype="multipart/form-data">
+            <input type="hidden" name="id" value="@Model.id"/>
+            <div class="form-group">
+                @Html.LabelFor(n => n.name)
+                @Html.TextBoxFor(n => n.name, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(n => n.brief)
+                @Html.TextBoxFor(n => n.brief, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(n => n.Desc)
+                @Html.TextBoxFor(n => n.Desc, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlFile1">Upload-Pdf</label>
+                <input type="file" class="form-control-file" name="pdf">
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(n => n.catalog.name)
+                @Html.DropDownListFor(n => n.catalog_id, (SelectList)ViewBag.catalogs, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(n => n.author.name)
+                @Html.DropDownListFor(n => n.author_id, (SelectList)ViewBag.authors, new { @class = "form-control" })
+            </div>
+
+            <button type="submit" class="btn btn-primary">Edite</button>
+        </form>
+    </div>
+</body>
+</html>

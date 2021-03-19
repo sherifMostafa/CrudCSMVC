@@ -1,0 +1,45 @@
+:root {
+  --main-color: #0eb493;
+  --second-color: #229782;
+}
+
+.btn-signup a {
+  padding: 10px 20px;
+  color: var(--main-color);
+  font-weight: 700;
+  font-size: 3rem;
+}
+.btn-primary a {
+  color: #fff;
+}
+
+/*login page*/
+
+.heading-title {
+  text-align: center;
+  color: var(--main-color);
+}
+
+.card {
+  width: 40%;
+  border: 0;
+}
+
+.container-customize {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.btn-submit {
+  border: 0;
+  color: #fff;
+  background-color: var(--main-color);
+  width: 100%;
+}
+
+.btn-submit:hover {
+  background-color: var(--second-color);
+}

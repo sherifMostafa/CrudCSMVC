@@ -1,0 +1,54 @@
+:root {
+  --main-color: #0eb493;
+  --second-color: #229782;
+  --Shadow-Form: #80beb3;
+}
+
+/*sign up as company*/
+
+.heading-title {
+  margin: 40px 0;
+  text-align: center;
+  color: var(--main-color);
+}
+
+.btn-submit {
+  border: 0;
+  color: #fff;
+  background-color: var(--main-color);
+}
+
+.btn-submit:hover {
+  background-color: var(--second-color);
+}
+
+.signup-Company-image {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.btn {
+  font-size: 1.2rem;
+}
+
+.Required-sign {
+  color: red;
+  font-weight: 800;
+}
+
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: var(--main-color);
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem var(--Shadow-Form);
+}
+/*Media Query*/
+
+@media (max-width: 1000px) {
+  .hide {
+    display: none;
+  }
+}

@@ -1,0 +1,49 @@
+﻿@model List<Lab4.Models.books>
+@{
+    ViewBag.title = "List";
+    Layout = "~/Views/Shared/_layout.cshtml";
+}
+
+
+    <div class="container">
+        @Html.ActionLink("Add", "Add", null, new { @class = "btn btn-primary" })
+        <table class="table">
+            <tr>
+                <th>@Html.DisplayNameFor(n => n[0].id)</th>
+                <th>@Html.DisplayNameFor(n => n[0].name)</th>
+                <th>@Html.DisplayNameFor(n => n[0].brief)</th>
+                <th>@Html.DisplayNameFor(n => n[0].Desc)</th>
+                <th>@Html.DisplayNameFor(n => n[0].Pdf)</th>
+                <th>@Html.DisplayNameFor(n => n[0].catalog.name)</th>
+                <th>@Html.DisplayNameFor(n => n[0].author.name)</th>
+               
+
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.id</td>
+                    <td>@item.name</td>
+                    <td>@item.brief</td>
+                    <td>@item.Desc</td>
+                    @if (item.Pdf != null)
+                    {
+                        <td><a href="/Home/download/@item.id"> <img src="~/attach/pdf.png" width="30px" /></a></td>
+                    }
+                    else
+                    {
+                        <td>@item.Pdf</td>
+                    }
+                    <td>@item.catalog.name</td>
+                    <td>@item.author.name</td>
+
+           
+                    <td><a class="btn btn-danger" href="/Home/delete/@item.id">Delete</a></td>
+                    <td>@Html.ActionLink("edite" , "edite" , new {id=@item.id} , new { @class="btn btn-info"})</td>
+                </tr>
+            }
+
+        </table>
+    </div>
+

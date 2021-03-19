@@ -1,0 +1,14 @@
+﻿@model Lab4.Models.users
+@{
+    ViewBag.title = "Profile";
+    Layout = "~/Views/Shared/_layout.cshtml";
+}
+
+
+    <div> 
+        <h1>@Model.id</h1>
+        <h1>@Model.name</h1>
+        <h1>@Model.email</h1>
+        <h1>@Model.Books.Count</h1>
+    </div>
+

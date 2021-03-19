@@ -1,0 +1,55 @@
+﻿@model Lab4.Models.users
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <!-- Vendor CSS Files -->
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/assets/mystyle/style.css">
+
+    <title>Login</title>
+</head>
+<body>
+
+    <div class="container container-customize">
+        <h1 class="heading-title mt-5">
+            Login
+
+        </h1>
+        <div class="card">
+            <form method="post">
+                <div class="form-group">
+                    @Html.LabelFor(n => n.email)
+                    @Html.TextBoxFor(n => n.email, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(n => n.password)
+                    @Html.TextBoxFor(n => n.password, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                   
+                   <input type="checkbox" name="RemeberMe" value="true"/> Remeber Me
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-submit">Login</button>
+
+                @if (ViewBag.status != null)
+                {
+                    <p class="text-danger">@ViewBag.status</p>
+                }
+
+
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
